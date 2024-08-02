@@ -1,0 +1,150 @@
+/* @import url('./fonts.css'); */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+  --clr-white--100: hsl(0, 0%, 100%);
+  --clr-pink--100: hsl(275, 100%, 97%);
+  --clr-purple--100: hsl(292, 16%, 49%);
+  --clr-purple--900: hsl(292, 42%, 14%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Work Sans", sans-serif;
+  background: var(--clr-pink--100);
+}
+
+/*Decorative Background*/
+.decorative-bg {
+  position: relative;
+}
+
+.decorative-bg img{
+  width: 100%;
+}
+
+
+/*Main*/
+.main {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90%, 50rem);
+  background: var(--clr-white--100);
+  border-radius: 1rem;
+}
+
+/*Article*/
+.article{
+  width: 85%;
+  margin-inline: auto;
+  padding-block: 2.5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.article__header{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.article__header .img{
+  width: 2.5rem;
+}
+
+.article__header .title{
+  font-size: 3.5rem;
+  letter-spacing: .1rem;
+  font-weight: 700;
+}
+
+
+/*Accordion Section*/
+.accordion__list{
+  display: grid;
+  gap: 1.5rem;
+}
+
+.accordion__item{
+  display: grid;
+  gap: 2rem;
+}
+
+.accordion__item:not(:last-of-type){
+  border-block-end: .01rem solid var(--clr-purple--100);
+  padding-block-end: 2rem;
+}
+
+.accordion__item__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.accordion__item__header .question{
+  font-weight: 600;
+}
+
+.accordion__item__header .question:hover{
+  color: var(--clr-purple--900);
+}
+
+.accordion__item__header .toggle-btn{
+  flex-shrink: 0;
+  transition: transform 200ms linear;
+}
+
+.accordion__item__header .toggle-btn:active{
+  transform: scale(0.9)!important;
+}
+
+.accordion__item__content{
+  display: none;
+}
+
+.accordion__item__content .answer{
+  color: var(--clr-purple--100);
+  line-height: 1.5;
+}
+
+.accordion__item__content:has(.active){
+  display: block;
+}
+
+@media screen and (min-width: 1024px){
+  .article{
+    padding-block: 3.5rem
+  }
+}
